@@ -12,11 +12,9 @@ img {
 body:not(.IconsPaginaPrincipal) {
     font-family: sans-serif;
     font-weight: bold;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   justify-content: center;
   background-image: url(./img/background.png), url(./img/estrellas-bg.png);
   background-size: 100%;
@@ -31,8 +29,6 @@ body:not(.IconsPaginaPrincipal) {
 }
 
 header {
-  position: absolute;
-  top: 0;
   max-height: 100px;
   min-width: 100%;
   height: 100px;
@@ -62,9 +58,6 @@ header {
 }
 
 .TextHeader {
-    width: 150%;
-  max-height: 100%;
-  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: start;
@@ -84,9 +77,6 @@ header {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   height: 70px;
   min-width: 100%;
   max-height: 100px;
@@ -342,30 +332,21 @@ footer {
 }
 
 .Cards {
-    max-width: min-content;
     display: grid;
     pointer-events: none;
-    padding: 0;
-    margin: 100px 0;
+    padding: 10px 33%; 
+    gap: 10px;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
     z-index: -3;
-        -webkit-touch-callout: none; /* Para Safari y dispositivos iOS */
-  -webkit-user-select: none; /* Para Safari y Chrome */
-  -moz-user-select: none; /* Para Firefox */
-  -ms-user-select: none; /* Para Internet Explorer y Microsoft Edge */
   user-select: none; /* Estándar */
-
   }
   
-  
-      
 
 .FlipCard {
   position: relative;
   color: white;
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
   cursor: pointer;
   background-color: transparent;
@@ -422,23 +403,18 @@ footer {
   transform: rotateY(0deg);
 }
 
-.ElementBack img {
-  width: 95%;
-}
-
 .CartasMal{  
     font-size: 15px;
     display: none;
     position: absolute;
-    top: 14%;
-    left: 25%;
+    top: 10%;
+    left: 50%;
     transform: translate(-50%, -50%);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 40vw;
-    height: 200px;
-    background-color: #f8aa51bd;
+    height: 100px;
+    background-color: #f8aa51e3;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.2),
       0 0 10px rgba(0, 0, 0, 0.1);
@@ -1290,23 +1266,6 @@ footer {
   display: flex;
   }
 
-  .CartasMal{  
-    font-size: 15px;
-    display: none;
-    position: relative;
-    top: 90px;
-    left: -8%;
-    transform: translate(-50%, -50%);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 41vw;
-    height: 62px;
-    background-color: #f8aa51bd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 85;
-  }
 
   #caja1:checked + #caja2:checked + #caja3:checked + #caja4:checked + #caja5:checked + #caja6:checked + #caja7:checked + #caja8:checked + #caja9:checked + #caja10:checked + #caja11:checked + #caja12:checked + #caja13:checked + #caja14:checked + #caja15:checked + #caja16:checked ~ .Cards .Ganaste
   {
@@ -1315,13 +1274,18 @@ footer {
 
 
    
-@media screen and (max-width: 1440px) {
-    main {
-      grid-gap: 5px;
+@media screen and (max-width: 1600px) {
+
+    .Cards {
+      padding: 10px 29%;
     }
+    .CartasMal {
+      top: 10%;
+      left: 50%;
+    } 
     .FlipCard {
-      width: 130px;
-      height: 130px;
+      width: 100%;
+      height: 100%;
     }
     .Ganaste h1 {
       font-size: 1.5rem;
@@ -1348,14 +1312,21 @@ footer {
     }
   }
   
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1400px) {
     main {
       grid-gap: 5px;
       margin: 50px 0 100px 0;
     }
+    .CartasMal {
+      top: 10%;
+      left: 50%;
+    } 
+    .Cards {
+      padding: 10px 20%;
+    }
     .FlipCard {
-      width: 100px;
-      height: 100px;
+      width: 100%;
+      height: 100%;
     }
     .Ganaste h1 {
       font-size: 1.5rem;
@@ -1427,13 +1398,20 @@ footer {
   
   }
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
+    .Cards {
+              padding: 5% 10%;
+      gap: 10px;
+    }
+    .CartasMal {
+      top: 10%;
+      left: 50%;
+    } 
     .FlipCard {
-      width: 100px;
-      height: 100px;
+      width: 100%;
+      height: 100%;
     }
     
-  
     header {
       max-width: 100vw;
       height: 100px;
@@ -1463,15 +1441,22 @@ footer {
     }
   }
   
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
+        .Cards {
+              padding: 20% 10%;
+      gap: 10px;
+    }
+        .CartasMal {
+      top: 10%;
+      left: 50%;
+    } 
     main {
       grid-gap: 5px;
     }
     .FlipCard {
-      width: 80px;
-      height: 80px;
+      width: 100%;
+      height: 100%;
     }
-  
     .HeaderDiv {
       flex-direction: column;
       justify-content: center;
@@ -1589,15 +1574,22 @@ footer {
     }
   }
   
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 400px) {
+    .Cards {
+              padding: 35% 5%;
+      gap: 10px;
+    }
+        .CartasMal {
+      top: 10%;
+      left: 50%;
+    } 
     main {
       grid-gap: 5px;
     }
     .FlipCard {
-      width: 60px;
-      height: 60px;
+      width: 100%;
+      height: 100%;
     }
-  
     .HeaderDiv {
       flex-direction: column;
       justify-content: center;
@@ -1685,9 +1677,13 @@ footer {
     main {
       grid-gap: 5px;
     }
+        .CartasMal {
+      top: 10%;
+      left: 50%;
+    } 
     .FlipCard {
-      width: 50px;
-      height: 50px;
+      width: 100%;
+      height: 100%;
     }
     .Ganaste {
       width: 90%;
